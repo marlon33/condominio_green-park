@@ -18,7 +18,7 @@ boletosRouter.get('/csv', csvProcessor.uploadCSV.single('file_upload'), async (r
             return error;
         });
     return res.status(200).json(result);
-})
+});
 
 boletosRouter.get('/pdf', pdfProcessor.uploadPDF.single('file_upload'), async (req: Request, res: Response): Promise<object> => {
     const file = req.file;
@@ -30,7 +30,13 @@ boletosRouter.get('/pdf', pdfProcessor.uploadPDF.single('file_upload'), async (r
         return error;
     });
     return res.status(200).json(result);
-})
+});
+
+boletosRouter.get('/', async (req: Request, res: Response): Promise<object> => {
+    const queryParams = req.query;
+    const result = await boletosProcessor.listBoletos(queryParams);
+    return res.status(200).json(result);
+});
 
 export default boletosRouter;
 
