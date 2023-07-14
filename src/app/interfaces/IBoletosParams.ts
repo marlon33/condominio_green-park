@@ -7,4 +7,5 @@ export interface IBoletosParams{
     valor_final?: number;
     valor?: number;
     linha_digitavel?: string;
+    relatorio?: number;
 }

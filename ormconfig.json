@@ -1,0 +1,18 @@
+{
+  "type": "${DB_HOST}",
+  "host": "${DB_HOST}",
+  "port": "${DB_PORT}",
+  "username": "${DB_USER}",
+  "password": "${DB_PASSWORD}",
+  "database": "${DB_DBNAME}",
+  "synchronize": true,
+  "logging": true,
+  "entities": ["dist/entities/**/*.js"],
+  "migrations": ["dist/migrations/**/*.js"],
+  "subscribers": ["dist/subscribers/**/*.js"],
+  "cli": {
+    "entitiesDir": "src/entities",
+    "migrationsDir": "src/migrations",
+    "subscribersDir": "src/subscribers"
+  }
+}

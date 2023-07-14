@@ -10,10 +10,12 @@ const port = process.env.PORT_SERVER;
 app.use(express.json());
 app.use(routers);
 
+// Inicialização do banco de dados
 AppDataSource.initialize()
     .then(async () => {
         console.clear();
         console.log("Banco de dados inicializado com sucesso!");
+        // Inicialização do servidor Express
         app.listen(port,() => {
             console.log(`Servidor inicializado com sucesso na porta ${port}`)
 

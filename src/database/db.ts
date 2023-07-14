@@ -4,6 +4,7 @@ import { DataSource } from "typeorm"
 import Lotes from "../app/entities/Lotes"
 import Boletos from "../app/entities/Boletos"
 import BoletosLotes from "../app/entities/BoletosLotes"
+import PdfOrder from "../app/entities/PdfOrder"
 
 export const AppDataSource = new DataSource({
     type: process.env.DB_DIALECT as any,
@@ -16,7 +17,11 @@ export const AppDataSource = new DataSource({
     entities: [
         Lotes,
         Boletos,
-        BoletosLotes
+        BoletosLotes,
+        PdfOrder
     ],
-    migrations: ["src/migrations/*{.ts,.js}"]
+    migrations: [
+        "src/migrations/*.ts",
+        "src/migrations/*.js",
+    ]
 })

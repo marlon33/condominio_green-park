@@ -4,6 +4,7 @@ import BoletosRepository from '../repositories/BoletosRepository';
 import { IFileParams } from '../interfaces/IFileParams';
 import { IBoletosParams } from "../interfaces/IBoletosParams";
 
+// Class responsavel por processar os boletos, CSV e PDF e lsitar os boletos
 class BoletosProcessor {
     protected csvProcessor = new CSVUploader();
     protected pdfProcessor = new PDFUploader();
@@ -36,6 +37,13 @@ class BoletosProcessor {
                 erro: "valor inical não pode ser maior do que o final"
             }];
         }
+
+        if(params.relatorio){
+            const result = await this.boletosRepository.listBoletos(params);
+            const base64 = await this.pdfProcessor.generatePdfBase64(result)
+            return [{base64}];
+        }
+
         const result = await this.boletosRepository.listBoletos(params);
         
         return result;
