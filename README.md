@@ -1,5 +1,49 @@
 
-## Documentação da API Condominio Green Park
+## Condominio Green Park
+
+# Desafio Técnico Backend NodeJS
+
+Esse repo e publico mas foi construido com o intuido de participar de um processo seletivo da Green Acesso
+
+
+
+## Ferramentas Utilizadas
+
+- VSCODE
+- Postman
+
+
+## Tecnologias Utilizadas
+
+- TypeScript
+- TypeORM
+
+
+## Iniciando
+Clone esse repositorio:
+Rode esses comandos
+
+```bash
+cd teste_green_acesso
+
+npm install
+
+npm db:migrate
+
+mkdir uploads
+mkdir uploads/csv
+mkdir uploads/pdf
+
+npm run dev:server
+## Para desenvolvimento
+
+npm start
+## Para produção
+
+```
+
+
+## Documentação da API
 
 #### Upload CSV
 
