@@ -1,0 +1,6 @@
+# Diretorios
+node_modules/
+.vscode/
+
+# Arquivors
+.env

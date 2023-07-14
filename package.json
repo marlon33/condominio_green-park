@@ -1,0 +1,41 @@
+{
+  "name": "teste_green_acesso",
+  "version": "1.0.0",
+  "description": "Desafio Técnico Backend NodeJs Green Acesso",
+  "main": "app.js",
+  "scripts": {
+    "dev:watch": "tsc --watch",
+    "dev:server": "ts-node-dev src/app.ts",
+    "db:migrate": " npm run typeorm -- -d ./src/database/db.ts  migration:run",
+    "db:revert": "npm run typeorm -- -d ./src/database/db.ts  migration:revert",
+    "db:seed": "npm run typeorm -- -d ./src/database/db.ts  seed",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+  },
+  "author": "Marlon Braga de Oliveira <eu.marlonbraga@gmail.com>",
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/multer": "^1.4.7",
+    "@types/node": "^20.4.1",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "chai": "^4.3.7",
+    "eslint": "^8.44.0",
+    "nodemon": "^3.0.1",
+    "pdf.js-extract": "^0.2.1",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@pdfme/generator": "^1.2.6",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.5.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.17"
+  }
+}
