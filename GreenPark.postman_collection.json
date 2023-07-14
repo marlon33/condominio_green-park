@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "c4c5a846-6836-4efc-99b6-9a548823a126",
+		"name": "GreenPark",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14008992"
+	},
+	"item": [
+		{
+			"name": "Post CSV",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file_upload",
+							"type": "file",
+							"src": "/home/marlon/snap/postman/184/Postman/files/boletos.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/boletos/csv",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"boletos",
+						"csv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post PDF",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file_upload",
+							"type": "file",
+							"src": "/home/marlon/snap/postman/184/Postman/files/boletos.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/boletos/pdf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"boletos",
+						"pdf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtros COM RELATORIO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/boletos/?nome=JOSE&valor_inicial=100&valor_final=200&id_lote=2&relatorio=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"boletos",
+						""
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "JOSE"
+						},
+						{
+							"key": "valor_inicial",
+							"value": "100"
+						},
+						{
+							"key": "valor_final",
+							"value": "200"
+						},
+						{
+							"key": "id_lote",
+							"value": "2"
+						},
+						{
+							"key": "relatorio",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtros SEM RELATORIO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/boletos/?nome=JOSE&valor_inicial=100&valor_final=200&id_lote=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"boletos",
+						""
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "JOSE"
+						},
+						{
+							"key": "valor_inicial",
+							"value": "100"
+						},
+						{
+							"key": "valor_final",
+							"value": "200"
+						},
+						{
+							"key": "id_lote",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
